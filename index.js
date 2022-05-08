@@ -6,7 +6,7 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const html = require('./src/htmlTemp');
+const newCode = require('./src/htmlTemp');
 
 //asynchronous functions
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -15,19 +15,15 @@ const appendFileAsync = util.promisify(fs.appendFile);
 let teamArray = [];
 let teamString = '';
 
-console.clear();
-console.log('---------------');
-console.log('A Team Profile Generator by sneuensc1');
-
 //Other functions
 async function primary () {
     try {
         await prompt ()
 
         for (let i = 0; i < teamArray; i++) {
-            teamString = teamString + html.generateCard (teamArray[i]);
+            teamString = teamString + newCode.generateCard (teamArray[i]);
         }
-        let completeHtml = html.generateHTML(teamString);
+        let completeHtml = newCode.generateHTML(teamString)
 
         console.clear();
         console.log('---------------');

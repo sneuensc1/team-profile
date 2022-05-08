@@ -65,5 +65,5 @@ const generateCard = function (arr) {
 `
 };
 
-exports.generateHTML = generateHTML;
-exports.generateCard = generateCard;
+module.exports = generateHTML;
+module.exports = generateCard;
