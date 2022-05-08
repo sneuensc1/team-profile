@@ -40,6 +40,30 @@ const generateCard = function (arr) {
         roleInfo = `Office number: ${arr.office}`
     } else if(arr.title === 'Engineer') {
         positionIcon = `<i class = 'fas fa-glasses></i>`
-        roleInfo = ``
+        roleInfo = `GitHub Username: <a href = 'https://github.com/${arr.github}' target = '_blank'> ${arr.github} </a>`
+    } else if(arr.title === 'Intern') {
+        positionIcon = `<i class = 'fas fa-user-graduate'></i>`
+        roleInfo = `School: ${arr.school}`
     }
-}
+
+    return `
+<div class = 'col-md-4 col-sm-6 col-12 col-lg-3'>
+    <div class = 'card shadow-lg mb-5 bg-white rounded'>
+        <div class = 'card-header bg-primary'>
+            <h4 class = 'text-white text-center'>${arr.name}</h4>
+            <h4 class = 'text-white text-center'>${positionIcon}</i>${arr.title}</h4>
+        </div>
+        <div class = 'card-body'>
+            <ul class = 'unstyled list'>
+                <li>Employee ID: ${arr.id}</li>
+                <li>Email: <a href = 'mailto:${arr.email}'>${arr.email}</a></li>
+                <li>${roleInfo}</li>
+            </ul>
+        </div>
+    </div>
+</div>                    
+`
+};
+
+exports.generateHTML = generateHTML;
+exports.generateCard = generateCard;

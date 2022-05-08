@@ -9,8 +9,3 @@ const Intern = require('../Intern');
 const html = require('./src/htmlTemp');
 const email = require('email-validator');
 
-class structure {
-    constructor() {
-        this.
-    }
-}
